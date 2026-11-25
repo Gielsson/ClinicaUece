@@ -4,11 +4,11 @@ ClinicaUece — Sistema de Clínica Médica (UECE)
 COMO ABRIR NO NETBEANS
   File > Open Project > pasta ClinicaUece (projeto Maven). Clean and Build baixa as dependências.
   Para rodar: botão direito no projeto > Run  (classe principal: app.Main).
-  Abre a janela de demonstração do núcleo (para o checkpoint). O banco clinica.db é criado sozinho,
+  Abre a janela principal (médicos, agendamento, agenda do médico, prontuário e contas). O banco clinica.db é criado sozinho,
   já com médicos, pacientes e histórico de exemplo (senha de todos: 123456).
 
 PACOTES (src/main/java)
-  app            Main, DadosExemplo, JanelaCheckpoint
+  app            Main, DadosExemplo, JanelaClinica
   model          Usuario, Medico, Paciente, Consulta, DadosAtendimento, Avaliacao, Conta,
                  EntradaListaEspera, Notificacao, Prontuario, EstadoConsulta, SituacaoConta, PlanoSaude
   especialidade  Especialidade (abstract), ClinicaGeral, Pediatria, Cardiologia, Dermatologia,

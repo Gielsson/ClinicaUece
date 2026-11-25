@@ -7,7 +7,6 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
-/**Pequenos atalhos de Swing usados pelas telas do núcleo e pela janela do checkpoint. */
 public final class SwingUtil {
     private SwingUtil() {}
 
@@ -29,7 +28,6 @@ public final class SwingUtil {
         return t;
     }
 
-    /** Pinta o texto da coluna conforme o estado (consulta ou conta). */
     public static void colorir(JTable t, int coluna) {
         t.getColumnModel().getColumn(coluna).setCellRenderer(new DefaultTableCellRenderer() {
             @Override public Component getTableCellRendererComponent(JTable tb, Object v, boolean sel, boolean foco, int l, int c) {
@@ -44,7 +42,7 @@ public final class SwingUtil {
         });
     }
 
-    /** Devolve o item da linha selecionada (ou avisa e devolve null). */
+    // Se não tem linha selecionada, já avisa o usuário e devolve null; quem chama só precisa checar o null.
     public static <T> T selecionado(Component pai, JTable t, List<T> dados, String aviso) {
         int i = t.getSelectedRow();
         if (i < 0 || i >= dados.size()) { info(pai, aviso); return null; }

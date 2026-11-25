@@ -34,10 +34,7 @@ public class AgendaMedicoPanel extends JPanel {
         topo.add(new JLabel("Data (dd/MM/aaaa):")); topo.add(txtData); topo.add(btnCarregar); topo.add(lblVagas);
         JPanel sul = new JPanel(new FlowLayout(FlowLayout.LEFT));
         sul.add(btnIniciar); sul.add(btnHistorico); sul.add(btnCancelar);
-        JLabel nota = new JLabel("Ao cancelar, o primeiro da lista de espera é promovido automaticamente e notificado.");
-        nota.setForeground(Color.GRAY);
-        JPanel rodape = new JPanel(new BorderLayout()); rodape.add(sul, BorderLayout.NORTH); rodape.add(nota, BorderLayout.SOUTH);
-        add(topo, BorderLayout.NORTH); add(new JScrollPane(tabela), BorderLayout.CENTER); add(rodape, BorderLayout.SOUTH);
+        add(topo, BorderLayout.NORTH); add(new JScrollPane(tabela), BorderLayout.CENTER); add(sul, BorderLayout.SOUTH);
 
         btnCarregar.addActionListener(e -> atualizar());
         txtData.addActionListener(e -> atualizar());
@@ -96,7 +93,7 @@ public class AgendaMedicoPanel extends JPanel {
         if (c == null || !SwingUtil.confirmar(this, "Cancelar a consulta de " + c.getPaciente().getNome() + "?")) return;
         try {
             agenda.cancelar(c.getId(), medico);
-            SwingUtil.info(this, "Consulta cancelada. Se havia lista de espera, o primeiro paciente foi promovido e notificado.");
+            SwingUtil.info(this, "Consulta cancelada.");
         } catch (ClinicaException ex) { SwingUtil.erro(this, ex.getMessage()); }
         atualizar();
     }

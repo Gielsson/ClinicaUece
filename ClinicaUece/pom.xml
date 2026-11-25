@@ -11,7 +11,7 @@
     <properties>
         <maven.compiler.release>17</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- classe com o main(); app.Main abre a janela do checkpoint -->
+        <!-- classe com o main() -->
         <exec.mainClass>app.Main</exec.mainClass>
     </properties>
 
@@ -19,6 +19,7 @@
         <dependency><groupId>org.xerial</groupId><artifactId>sqlite-jdbc</artifactId><version>3.46.1.0</version></dependency>
         <dependency><groupId>com.formdev</groupId><artifactId>flatlaf</artifactId><version>3.5.1</version></dependency>
         <dependency><groupId>org.jfree</groupId><artifactId>jfreechart</artifactId><version>1.5.5</version></dependency>
+        <dependency><groupId>org.slf4j</groupId><artifactId>slf4j-nop</artifactId><version>1.7.36</version></dependency>
         <dependency><groupId>org.mindrot</groupId><artifactId>jbcrypt</artifactId><version>0.4</version></dependency>
         <dependency><groupId>org.junit.jupiter</groupId><artifactId>junit-jupiter</artifactId><version>5.10.2</version><scope>test</scope></dependency>
     </dependencies>
